@@ -1,10 +1,10 @@
-# GravenArc Toolkit 1.1.5 — установка в Blender 5.2 LTS
+# GravenArc Toolkit 1.1.6 — установка в Blender 5.2 LTS
 
 ![Кисти](../GravenArc_Library/brushes/brushes_preview.png)
 ![Ювелирные инструменты](../GravenArc_Library/jewelry_tools/demo/demo_render.png)
 
 
-Один файл **gravenarc_toolkit-1.1.5.zip** (≈19 МБ) содержит всё:
+Один файл **gravenarc_toolkit-1.1.6.zip** (≈19 МБ) содержит всё:
 - 25 кистей «GA …» в стиле ZBrush;
 - 3 alpha-кисти с орнаментами;
 - 103 шаблона (кольца, шинки, кулоны, касты, камни, геометрия, основы для лепки);
@@ -17,14 +17,14 @@
 
 **Способ 1 — перетаскиванием**
 1. Откройте Blender 5.2.
-2. Перетащите `gravenarc_toolkit-1.1.5.zip` из папки прямо в окно Blender (на 3D-вьюпорт).
+2. Перетащите `gravenarc_toolkit-1.1.6.zip` из папки прямо в окно Blender (на 3D-вьюпорт).
 3. В появившемся окне нажмите **OK / Install**. Готово — расширение уже включено.
 
 **Способ 2 — через настройки**
 1. **Edit → Preferences** (или `Ctrl+,`).
 2. Слева **Get Extensions**.
 3. Справа вверху стрелка **⌄** → **Install from Disk…**
-4. Выберите `gravenarc_toolkit-1.1.5.zip` → **Install from Disk**.
+4. Выберите `gravenarc_toolkit-1.1.6.zip` → **Install from Disk**.
 5. Убедитесь, что в списке **Add-ons** у «GravenArc Toolkit» стоит галочка.
 
 > Если Preferences не сохраняются автоматически: меню ☰ слева внизу → **Save Preferences**.

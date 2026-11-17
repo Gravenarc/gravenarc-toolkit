@@ -173,9 +173,13 @@ class GRAVENARC_OT_open_assets(Operator):
     def execute(self, context):
         ensure_library()
         area = None
-        for a in context.screen.areas:
-            if a.type == 'FILE_BROWSER' and a.ui_type == 'ASSETS':
-                area = a
+        # Уже открытый Asset Browser — в любом окне Blender
+        for win in context.window_manager.windows:
+            for a in win.screen.areas:
+                if a.type == 'FILE_BROWSER' and a.ui_type == 'ASSETS':
+                    area = a
+                    break
+            if area:
                 break
         if area is None:
             # Новое окно-копия текущей области, переключаем его в Asset Browser.
@@ -189,21 +193,42 @@ class GRAVENARC_OT_open_assets(Operator):
         if area is None:
             self.report({'WARNING'}, "Откройте Asset Browser вручную (Shift+F1) и выберите GravenArc")
             return {'CANCELLED'}
-        for space in area.spaces:
-            if space.type == 'FILE_BROWSER':
-                params = space.params
-                if params is not None and hasattr(params, "asset_library_reference"):
-                    try:
-                        params.asset_library_reference = LIBRARY_NAME
-                    except TypeError:
-                        pass
-                    if self.catalog and hasattr(params, "catalog_id"):
-                        try:
-                            params.catalog_id = self.catalog
-                        except (TypeError, AttributeError):
-                            pass
-        area.tag_redraw()
+        _point_browser(area, self.catalog)
         return {'FINISHED'}
+
+
+def _set_params(area, catalog):
+    """True, если библиотека выставлена. У только что созданного окна params появляются
+    не сразу (после первой перерисовки), поэтому вызывается ещё и из таймера."""
+    try:
+        for space in area.spaces:
+            if space.type != 'FILE_BROWSER':
+                continue
+            params = space.params
+            if params is None or not hasattr(params, "asset_library_reference"):
+                return False
+            if params.asset_library_reference != LIBRARY_NAME:
+                params.asset_library_reference = LIBRARY_NAME
+            if catalog and hasattr(params, "catalog_id") and params.catalog_id != catalog:
+                params.catalog_id = catalog
+            area.tag_redraw()
+            return params.asset_library_reference == LIBRARY_NAME
+    except (ReferenceError, TypeError, AttributeError):
+        return True   # окно закрыли или API другое — больше не пытаемся
+    return False
+
+
+def _point_browser(area, catalog):
+    if _set_params(area, catalog):
+        return
+    tries = [0]
+
+    def retry():
+        tries[0] += 1
+        if _set_params(area, catalog) or tries[0] > 30:
+            return None
+        return 0.1
+    bpy.app.timers.register(retry, first_interval=0.1)
 
 
 CATALOG_TEMPLATES = "72a06f5c-5671-5f2c-bcd0-a2ad68fa7eab"   # GravenArc/Templates

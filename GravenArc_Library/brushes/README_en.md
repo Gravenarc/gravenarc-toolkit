@@ -6,7 +6,7 @@
 25 brush assets for jewelry sculpting. File: `brushes/GravenArc_Brushes.blend`.
 The catalogs live in the shared `GravenArc_Library/blender_assets.cats.txt` (alphas and templates use the same file).
 
-> If you installed the **GravenArc Toolkit** add-on (`gravenarc_toolkit-1.1.5.zip`), the library is already connected: skip section 1.
+> If you installed the **GravenArc Toolkit** add-on (`gravenarc_toolkit-1.1.6.zip`), the library is already connected: skip section 1.
 
 ```
 GravenArc_Library/              ← the asset library root

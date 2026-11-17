@@ -32,7 +32,7 @@ on extensions.blender.org (GPL-3.0). Everything is in millimetres. Tested in Ble
 
 ## Installation (step by step)
 
-1. **Add-on.** The jewelry tools are part of the **GravenArc Toolkit** add-on: install `gravenarc_toolkit-1.1.5.zip`
+1. **Add-on.** The jewelry tools are part of the **GravenArc Toolkit** add-on: install `gravenarc_toolkit-1.1.6.zip`
    (Edit › Preferences (**Ctrl+,**) › Get Extensions › ⌄ arrow at the top right › **Install from Disk…**). Details: `GravenArc_Addon/README_en.md`.
 2. **Assets.** The `GravenArc` library with the `GravenArc › Jewelry › …` catalogs is connected automatically.
 3. **Scene.** In the 3D Viewport press **N** → **GravenArc** tab → **Сцена в миллиметрах** (Scene in millimetres: 1 unit = 1 mm).
@@ -110,7 +110,7 @@ on extensions.blender.org (GPL-3.0). Everything is in millimetres. Tested in Ble
 ## Files
 * `gravenarc_jewelry/`: add-on source code (`core` units, sizes and densities; `gems` cuts, cutters, heads;
   `ring` shank, resize, wrap, text; `layout` pavé and curves; `analysis` weight and checks; `ops`, `ui`).
-* `gravenarc_jewelry/blender_manifest.toml` lets you build the jewelry tools as a separate extension too, but for normal use install the shared `gravenarc_toolkit-1.1.5.zip`.
+* `gravenarc_jewelry/blender_manifest.toml` lets you build the jewelry tools as a separate extension too, but for normal use install the shared `gravenarc_toolkit-1.1.6.zip`.
 * `build_jewelry_library.py` rebuilds the assets, previews and demo:
   `blender -b --factory-startup --python build_jewelry_library.py` (≈1.5 min; add `-- --no-previews --no-demo` for a faster run).
 * `GravenArc_Jewelry.blend`, `jewelry_preview.png`, `demo/`: build output.

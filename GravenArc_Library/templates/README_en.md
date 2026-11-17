@@ -48,7 +48,7 @@ Per-template check results are in `templates_report.json`: dimensions, minimum w
 
 ## Installation, step by step
 
-> If you installed the **GravenArc Toolkit** add-on (`gravenarc_toolkit-1.1.5.zip`), the library is already connected: skip this section.
+> If you installed the **GravenArc Toolkit** add-on (`gravenarc_toolkit-1.1.6.zip`), the library is already connected: skip this section.
 
 1. Copy the whole `GravenArc_Library` folder (with `blender_assets.cats.txt` in its root) to your disk.
 2. Blender → **Edit › Preferences** (Ctrl+, ) → **File Paths** → **Asset Libraries** → **+** → choose the `GravenArc_Library` folder. Name: `GravenArc`. **Import Method: Append** (the template becomes a normal editable copy).

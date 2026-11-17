@@ -2,7 +2,7 @@
 
 **Free jewelry toolkit for Blender 5.2 LTS: RhinoGold-style jewelry tools, ZBrush-style brushes, ornament alphas and 103 templates. Everything in millimetres, ready for resin printing and sand casting.**
 
-[**⬇ Download the latest release**](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.1.6.zip) · [Русская версия](README_ru.md) · Instagram [@gravenarc](https://instagram.com/gravenarc)
+[**⬇ Download the latest release**](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.2.0.zip) · [Русская версия](README_ru.md) · Instagram [@gravenarc](https://instagram.com/gravenarc)
 
 ![Jewelry tools demo](docs/jewelry_demo.png)
 
@@ -13,6 +13,7 @@
 | 💎 **Jewelry tools** (RhinoGold / Matrix style) | Gems in 13 cuts with carat weight · prong heads and bezels · gem cutters · one-click pavé · gems along a curve · polar array · shank in any ring size (RU/EU/US/UK) · ring resize and size measurement · wrap ornament around a ring · text engraving inside/outside the ring · metal weight in 14 alloys · casting check (undercuts, draft, thin walls) · shrinkage · merge to one solid · gem & metal report (CSV) |
 | 🖌 **25 brushes** | ZBrush-style presets: Clay Buildup, Dam Standard, hPolish, Trim Dynamic, Orb Cracks, Move Topological… plus Groove 0.5/1.0 mm and Bead 0.8 mm sized in real millimetres |
 | 🌀 **Ornament alphas** | Rosette with granulation, Armenian eternity whirl, seamless scroll band. Converter from Illustrator SVG with checks for sand casting (bridges and gaps ≥ 0.5 mm) |
+| 🔁 **Stroke replay & Photoshop-style brush** (new in 1.2.0) | Shift+R replays/replaces the last stroke with the current brush, repeat strength and live strength by mouse · Alt+R masks the last stroke · marker and "mask everything changed since" · remember/recall mask · separate/delete masked and hidden · Alt+Right Mouse drag for size and hardness with a preview ring · Alt+L straight line · brush preset folders · stroke smoothing. [Guide](GravenArc_Library/sculpt_tools/README_en.md) |
 | 📦 **103 templates + 61 jewelry assets** | Shanks, rings, signets, pendants, settings, gems, wire and filigree, sculpting bases, geometry |
 
 Hotkeys: **N › GravenArc** panel, pie menu **Shift+Alt+J** (Object Mode), **Shift+A** › Gem / Shank by size, **F9** to tweak the last operation.
@@ -24,7 +25,7 @@ Hotkeys: **N › GravenArc** panel, pie menu **Shift+Alt+J** (Object Mode), **Sh
 
 ## Install
 
-1. Download [`gravenarc_toolkit-1.1.6.zip`](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.1.6.zip). Do not unzip it.
+1. Download [`gravenarc_toolkit-1.2.0.zip`](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.2.0.zip). Do not unzip it.
 2. Drag the zip into the Blender 5.2 window, or **Edit › Preferences › Get Extensions › ⌄ › Install from Disk…**
 3. Press **N** in the 3D Viewport → **GravenArc** tab → **Scene in millimetres**.
 

@@ -1,15 +1,16 @@
-# GravenArc Toolkit 1.1.6: installing in Blender 5.2 LTS
+# GravenArc Toolkit 1.2.0: installing in Blender 5.2 LTS
 
 ![Brushes](../GravenArc_Library/brushes/brushes_preview.png)
 ![Jewelry tools](../GravenArc_Library/jewelry_tools/demo/demo_render.png)
 
 
-A single file, **gravenarc_toolkit-1.1.6.zip** (≈19 MB), contains everything:
+A single file, **gravenarc_toolkit-1.2.0.zip** (≈19 MB), contains everything:
 - 25 ZBrush-style "GA …" brushes;
 - 3 ornament alpha brushes;
 - 103 templates (rings, shanks, pendants, settings, gems, geometry, sculpting bases);
 - **jewelry tools** in the spirit of Rhino/RhinoGold: 13 gem cuts, heads, cutters, pavé, gems on curve, shank by size, resize, engraving, metal weight, casting check, shrinkage, report;
-- 61 jewelry assets (gems, cutters, prong heads and bezels).
+- 61 jewelry assets (gems, cutters, prong heads and bezels);
+- **sculpt tools** (since 1.2.0): Shift+R stroke replay, Alt+R mask last stroke, marker, separate/delete masked, Alt+Right Mouse size/hardness, Alt+L straight line, brush preset folders, smoothing. Step by step: [sculpt_tools/README_en.md](../GravenArc_Library/sculpt_tools/README_en.md).
 
 There is **no need** to unzip it. If you previously installed the separate `gravenarc_jewelry`, disable and remove it: everything is already inside.
 
@@ -19,14 +20,14 @@ There is **no need** to unzip it. If you previously installed the separate `grav
 
 **Way 1: drag and drop**
 1. Open Blender 5.2.
-2. Drag `gravenarc_toolkit-1.1.6.zip` from the folder straight into the Blender window (onto the 3D Viewport).
+2. Drag `gravenarc_toolkit-1.2.0.zip` from the folder straight into the Blender window (onto the 3D Viewport).
 3. Press **OK / Install** in the dialog. Done: the extension is already enabled.
 
 **Way 2: through Preferences**
 1. **Edit → Preferences** (or `Ctrl+,`).
 2. **Get Extensions** on the left.
 3. The **⌄** arrow at the top right → **Install from Disk…**
-4. Choose `gravenarc_toolkit-1.1.6.zip` → **Install from Disk**.
+4. Choose `gravenarc_toolkit-1.2.0.zip` → **Install from Disk**.
 5. Make sure "GravenArc Toolkit" is ticked in the **Add-ons** list.
 
 > If Preferences are not saved automatically: ☰ menu bottom left → **Save Preferences**.
@@ -34,7 +35,7 @@ There is **no need** to unzip it. If you previously installed the separate `grav
 ## What happens when it is enabled
 
 - A **GravenArc** library (a folder inside the extension) appears in **Edit → Preferences → File Paths → Asset Libraries**. Nothing has to be set up by hand.
-- Two panels appear in the 3D Viewport under **N › GravenArc**: **GravenArc Toolkit** (library) and **Ювелирка** (Jewelry tools).
+- Panels appear in the 3D Viewport under **N › GravenArc**: **GravenArc Toolkit** (library) and **Ювелирка** (Jewelry tools); in Sculpt Mode also **Sculpt: Repeat & Mask**, **Sculpt: Photoshop Brush** and **Sculpt: Brush Presets**.
 - The jewelry pie menu **Shift+Alt+J** (Object Mode) is enabled.
 - When the extension is disabled or removed, the library is removed automatically.
 
@@ -66,6 +67,7 @@ Install the new .zip the same way: the old version is replaced and the library i
 
 - Extension source: `src/gravenarc_toolkit/` (`__init__.py`, `blender_manifest.toml`, `LICENSE` GPL-3.0-or-later).
 - Jewelry tools code: `../GravenArc_Library/jewelry_tools/gravenarc_jewelry/`; the build puts it into `modules/jewelry/` and its assets into `library/jewelry/`.
+- Sculpt module: `src/gravenarc_toolkit/modules/sculpt/`; tests: `BLENDER_USER_RESOURCES=$(mktemp -d) python tests/test_sculpt.py dist/gravenarc_toolkit-1.2.0.zip` (needs `pip install bpy==5.2.4`).
 - Build: `bash build_addon.sh` (needs `blender` 5.2+ in PATH or `BLENDER=/path/to/blender`). The script takes the assets from `../GravenArc_Library/`, runs `blender --command extension validate` and `build`, and puts the .zip into `dist/`.
 - Previews and showcase sheets (Cycles studio renders, in `GravenArc_Library/tools/`):
   - `make_brushes.py` → brushes + volumetric icons (`brush_icons.py`, a red-wax sphere with the real stroke);

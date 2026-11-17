@@ -124,7 +124,8 @@ class GV_OT_gem_add(_GemParams, bpy.types.Operator):
     bl_idname = "gravenarc.gem_add"
     bl_label = "Камень"
     bl_description = ("Добавить камень в 3D-курсор. Если активен объект-металл — камень встаёт по нормали "
-                      "к ближайшей точке его поверхности (как Gem on Surface в RhinoGold)")
+                      "к ближайшей точке его поверхности (как Gem on Surface в RhinoGold). "
+                      "Если активна шинка, а курсор не на металле — камень встаёт на верх кольца")
     bl_options = {'REGISTER', 'UNDO'}
 
     on_surface: BoolProperty(name="На поверхность активного объекта", default=True)
@@ -154,7 +155,17 @@ class GV_OT_gem_add(_GemParams, bpy.types.Operator):
         tgt = _target(context)
         if self.on_surface and tgt:
             inv = tgt.matrix_world.inverted()
-            ok, p, n, _ = tgt.closest_point_on_mesh(inv @ cur.location)
+            lc = inv @ cur.location
+            ok, p, n, _ = tgt.closest_point_on_mesh(lc)
+            if tgt.get("gv_inner_d_mm") and tgt.type == 'MESH':
+                # Кольцо: если курсор не на металле (например, остался в центре), ставим камень
+                # на верх шинки (+Y) снаружи — туда, где он нужен почти всегда.
+                r_in = float(tgt["gv_inner_d_mm"]) / 2.0 / k
+                if not ok or (p - lc).length > 0.25 / k or Vector((lc.x, lc.y)).length < r_in * 0.98:
+                    top = max(v[1] for v in tgt.bound_box) + 10.0 / k
+                    hit, hp, hn, _ = tgt.ray_cast(Vector((0.0, top, 0.0)), Vector((0.0, -1.0, 0.0)))
+                    if hit:
+                        ok, p, n = True, hp, hn
             if ok:
                 loc = (tgt.matrix_world @ p) * k
                 nrm = (tgt.matrix_world.inverted().transposed().to_3x3() @ n).normalized()

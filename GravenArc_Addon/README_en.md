@@ -1,10 +1,10 @@
-# GravenArc Toolkit 1.1.3: installing in Blender 5.2 LTS
+# GravenArc Toolkit 1.1.4: installing in Blender 5.2 LTS
 
 ![Brushes](../GravenArc_Library/brushes/brushes_preview.png)
 ![Jewelry tools](../GravenArc_Library/jewelry_tools/demo/demo_render.png)
 
 
-A single file, **gravenarc_toolkit-1.1.3.zip** (≈19 MB), contains everything:
+A single file, **gravenarc_toolkit-1.1.4.zip** (≈19 MB), contains everything:
 - 25 ZBrush-style "GA …" brushes;
 - 3 ornament alpha brushes;
 - 103 templates (rings, shanks, pendants, settings, gems, geometry, sculpting bases);
@@ -19,14 +19,14 @@ There is **no need** to unzip it. If you previously installed the separate `grav
 
 **Way 1: drag and drop**
 1. Open Blender 5.2.
-2. Drag `gravenarc_toolkit-1.1.3.zip` from the folder straight into the Blender window (onto the 3D Viewport).
+2. Drag `gravenarc_toolkit-1.1.4.zip` from the folder straight into the Blender window (onto the 3D Viewport).
 3. Press **OK / Install** in the dialog. Done: the extension is already enabled.
 
 **Way 2: through Preferences**
 1. **Edit → Preferences** (or `Ctrl+,`).
 2. **Get Extensions** on the left.
 3. The **⌄** arrow at the top right → **Install from Disk…**
-4. Choose `gravenarc_toolkit-1.1.3.zip` → **Install from Disk**.
+4. Choose `gravenarc_toolkit-1.1.4.zip` → **Install from Disk**.
 5. Make sure "GravenArc Toolkit" is ticked in the **Add-ons** list.
 
 > If Preferences are not saved automatically: ☰ menu bottom left → **Save Preferences**.

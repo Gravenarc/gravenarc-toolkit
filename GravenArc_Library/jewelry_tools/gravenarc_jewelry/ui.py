@@ -61,7 +61,7 @@ class GV_PT_layout(_Base, bpy.types.Panel):
 
     def draw(self, context):
         col = self.layout.column(align=True)
-        col.operator("gravenarc.pave", icon='LIGHTPROBE_GRID')
+        col.operator("gravenarc.pave", icon='LIGHTPROBE_VOLUME')
         col.operator("gravenarc.gems_on_curve", icon='CURVE_DATA')
         col.operator("gravenarc.polar_array", icon='PHYSICS')
 
@@ -133,7 +133,7 @@ class GV_MT_pie(bpy.types.Menu):
         pie.operator("gravenarc.weight", icon='SORTSIZE')                            # →
         pie.operator("gravenarc.casting_check", icon='MOD_MASK')                     # ↓
         pie.operator("gravenarc.ring_shank", icon='MESH_TORUS')                      # ↑
-        pie.operator("gravenarc.pave", icon='LIGHTPROBE_GRID')                       # ↖
+        pie.operator("gravenarc.pave", icon='LIGHTPROBE_VOLUME')                       # ↖
         pie.operator("gravenarc.gems_on_curve", icon='CURVE_DATA')                   # ↗
         pie.operator("gravenarc.gem_heads", text="Касты", icon='OUTLINER_OB_POINTCLOUD')  # ↙
         pie.operator("gravenarc.engrave_text", icon='FONT_DATA')                     # ↘

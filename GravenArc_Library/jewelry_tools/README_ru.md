@@ -30,7 +30,7 @@
 
 ## Установка (шаг за шагом)
 
-1. **Аддон.** Ювелирные инструменты входят в общий аддон **GravenArc Toolkit**: установите `gravenarc_toolkit-1.1.1.zip`
+1. **Аддон.** Ювелирные инструменты входят в общий аддон **GravenArc Toolkit**: установите `gravenarc_toolkit-1.1.2.zip`
    (Edit › Preferences (**Ctrl+,**) › Get Extensions › стрелка ⌄ справа вверху › **Install from Disk…**). Подробно — `GravenArc_Addon/README_ru.md`.
 2. **Ассеты.** Библиотека `GravenArc` с каталогами `GravenArc › Jewelry › …` подключится сама.
 3. **Сцена.** В 3D-окне нажмите **N** → вкладка **GravenArc** → **Сцена в миллиметрах** (1 единица = 1 мм).
@@ -108,7 +108,7 @@
 ## Файлы
 * `gravenarc_jewelry/` — код аддона (`core` единицы, размеры и плотности; `gems` огранки, вырезы, касты;
   `ring` шинка, ресайз, обтекание, текст; `layout` паве и кривые; `analysis` вес и проверки; `ops`, `ui`).
-* `gravenarc_jewelry/blender_manifest.toml` — позволяет собрать ювелирку и отдельным расширением, но для работы ставьте общий `gravenarc_toolkit-1.1.1.zip`.
+* `gravenarc_jewelry/blender_manifest.toml` — позволяет собрать ювелирку и отдельным расширением, но для работы ставьте общий `gravenarc_toolkit-1.1.2.zip`.
 * `build_jewelry_library.py` — пересборка ассетов, превью и демо:
   `blender -b --factory-startup --python build_jewelry_library.py` (≈1,5 мин; `-- --no-previews --no-demo` — быстрее).
 * `GravenArc_Jewelry.blend`, `jewelry_preview.png`, `demo/` — результат сборки.

@@ -1,0 +1,38 @@
+# This is an Asset Catalog Definition file for Blender.
+#
+# Empty lines and lines starting with `#` will be ignored.
+# The first non-ignored line should be the version indicator.
+# Other lines are of the format "UUID:catalog/path/for/assets:simple catalog name"
+
+VERSION 1
+
+a80f8d31-7ad3-5e74-943f-8adfcbda8fb9:GravenArc:GravenArc
+6b58177d-6a2d-545d-86e9-4bc29a439059:GravenArc/Brushes:Кисти GravenArc
+1463737a-8bfd-5ec0-9c25-39e912042851:GravenArc/Brushes/Build:GravenArc-Build
+61234b5b-096d-558f-9920-21fd33e5eb25:GravenArc/Brushes/Carve:GravenArc-Carve
+16b3cc3e-3251-53a6-8b7d-38335cfc3402:GravenArc/Brushes/Flatten:GravenArc-Flatten
+ac017041-c064-5ccb-839b-9d7ba3dd1a14:GravenArc/Brushes/Smooth:GravenArc-Smooth
+b8270f12-0520-5702-904c-7a2168b33ea8:GravenArc/Brushes/Move:GravenArc-Move
+ebc97fbe-a07c-5929-9cfa-034cadab3c04:GravenArc/Brushes/Mask:GravenArc-Mask
+2e3d6e27-d75f-562e-8951-dea76e47b90d:GravenArc/Alphas:GravenArc-Alphas
+62d8afe4-fd91-5bf6-ba2a-50c9b4f0be06:GravenArc/Alphas/Armenian:GravenArc-Alphas-Armenian
+60b42815-5177-593f-9d31-26f919fad794:GravenArc/Alphas/Bands:GravenArc-Alphas-Bands
+4fee9a8d-3aa9-5ff8-ae97-1064270fb16b:GravenArc/Alphas/Jewelry:GravenArc-Alphas-Jewelry
+72a06f5c-5671-5f2c-bcd0-a2ad68fa7eab:GravenArc/Templates:GravenArc-Templates
+ba057770-5c47-56f9-a378-ac16bc2456de:GravenArc/Templates/Jewelry:GravenArc-Templates-Jewelry
+b01a54b9-87ad-50ee-8c8a-ebbfd2309209:GravenArc/Templates/Geometry:GravenArc-Templates-Geometry
+93a4d196-fb92-5f34-bb9b-88f57b8a9c7d:GravenArc/Templates/Hard Surface:GravenArc-Templates-Hard Surface
+794bca03-8744-52f7-aa4d-fa7915c2264e:GravenArc/Templates/Jewelry/Shanks:GravenArc-Templates-Jewelry-Shanks
+ad7e843d-0cc9-5c4b-a960-db9098719a34:GravenArc/Templates/Jewelry/Rings:GravenArc-Templates-Jewelry-Rings
+940cc2bc-dc2f-5c3b-bca2-2f14ee8356fd:GravenArc/Templates/Jewelry/Pendants:GravenArc-Templates-Jewelry-Pendants
+e6d6c56a-3106-59de-9b4a-7fc0727d889b:GravenArc/Templates/Jewelry/Settings:GravenArc-Templates-Jewelry-Settings
+c5bc4c23-d27b-5ba5-be7d-32147f69f847:GravenArc/Templates/Jewelry/Gems:GravenArc-Templates-Jewelry-Gems
+b29619b3-64c3-52a0-bcc0-0fc5d62ff7ee:GravenArc/Templates/Jewelry/Wire:GravenArc-Templates-Jewelry-Wire
+95df6cdf-0aed-5df9-b796-fb8590489a20:GravenArc/Templates/Sculpt Bases:GravenArc-Templates-Sculpt Bases
+140b2713-7fbf-5542-9647-0828fbac9a18:GravenArc/Templates/Characters:GravenArc-Templates-Characters
+0a07538d-047d-548b-ac23-fa4c0f8a52dd:GravenArc/Templates/Organic:GravenArc-Templates-Organic
+1130a6fb-39f1-5d8c-a099-d9b63812af23:GravenArc/Jewelry:GravenArc-Jewelry
+d5c5632b-43eb-562d-9119-15d38c5a1bd6:GravenArc/Jewelry/Gems:GravenArc-Jewelry-Gems
+e5009356-8a33-5ccd-9aaa-1b2a994f707a:GravenArc/Jewelry/Cutters:GravenArc-Jewelry-Cutters
+18e5daa6-ed27-5a32-92a1-88532e0cee65:GravenArc/Jewelry/Heads:GravenArc-Jewelry-Heads
+7d5d8b70-789b-5d38-b316-2dd1198a4b33:GravenArc/Jewelry/Bezels:GravenArc-Jewelry-Bezels

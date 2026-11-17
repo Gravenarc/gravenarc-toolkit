@@ -1,0 +1,32 @@
+{
+  "name": "arevakhach_whirl",
+  "title": "Вихрь вечности (8 лучей)",
+  "catalog": "GravenArc/Alphas/Armenian",
+  "source": "arevakhach_whirl.svg",
+  "size_mm": [
+    16.25,
+    16.25
+  ],
+  "artwork_mm": [
+    14.0,
+    14.0
+  ],
+  "px_per_mm": 40.0,
+  "depth_mm": 0.4,
+  "draft_deg": 15.0,
+  "profile": "round",
+  "tile": "none",
+  "steps": [
+    {
+      "level": 1.0,
+      "step_mm": 0.4,
+      "wall_run_mm": 0.1684
+    }
+  ],
+  "min_bridge_mm": 0.5,
+  "min_gap_mm": 0.5,
+  "fix_gaps": true,
+  "thin_bridges_mm2": 0.0,
+  "narrow_gaps_mm2": 0.0,
+  "ok_for_sand_casting": true
+}

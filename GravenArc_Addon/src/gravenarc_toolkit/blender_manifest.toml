@@ -1,0 +1,25 @@
+schema_version = "1.0.0"
+
+id = "gravenarc_toolkit"
+version = "1.1.1"
+name = "GravenArc Toolkit"
+tagline = "Jewelry brushes, alphas, templates and Rhino-style jewelry tools"
+maintainer = "GravenArc"
+type = "add-on"
+
+website = "https://extensions.blender.org/"
+
+tags = ["Sculpt", "Modeling", "Mesh", "Pipeline"]
+
+blender_version_min = "5.2.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
+copyright = ["2026 GravenArc"]
+
+[build]
+paths_exclude_pattern = [
+  "__pycache__/",
+  "/.git/",
+  "*.zip",
+  "*.blend1",
+]

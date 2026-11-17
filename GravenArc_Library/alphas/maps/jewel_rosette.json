@@ -1,0 +1,42 @@
+{
+  "name": "jewel_rosette",
+  "title": "Розетка с зернью",
+  "catalog": "GravenArc/Alphas/Jewelry",
+  "source": "jewel_rosette.svg",
+  "size_mm": [
+    13.9,
+    13.9
+  ],
+  "artwork_mm": [
+    12.0,
+    12.0
+  ],
+  "px_per_mm": 40.0,
+  "depth_mm": 0.4,
+  "draft_deg": 15.0,
+  "profile": "round",
+  "tile": "none",
+  "steps": [
+    {
+      "level": 0.25,
+      "step_mm": 0.1,
+      "wall_run_mm": 0.0421
+    },
+    {
+      "level": 0.5,
+      "step_mm": 0.1,
+      "wall_run_mm": 0.0421
+    },
+    {
+      "level": 1.0,
+      "step_mm": 0.2,
+      "wall_run_mm": 0.0842
+    }
+  ],
+  "min_bridge_mm": 0.5,
+  "min_gap_mm": 0.5,
+  "fix_gaps": false,
+  "thin_bridges_mm2": 0.0,
+  "narrow_gaps_mm2": 0.0,
+  "ok_for_sand_casting": true
+}

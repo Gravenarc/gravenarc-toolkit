@@ -1,0 +1,16 @@
+schema_version = "1.0.0"
+
+id = "gravenarc_jewelry"
+version = "1.0.0"
+name = "GravenArc Jewelry Tools"
+tagline = "Rhino-style jewelry tools: gems, settings, pave, ring sizes, casting checks"
+maintainer = "GravenArc"
+type = "add-on"
+
+website = "https://extensions.blender.org/"
+tags = ["Modeling", "Mesh", "Object"]
+
+blender_version_min = "5.2.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
+copyright = ["2026 GravenArc"]

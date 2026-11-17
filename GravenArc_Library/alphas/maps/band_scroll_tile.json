@@ -1,0 +1,32 @@
+{
+  "name": "band_scroll_tile",
+  "title": "Бордюр-завиток (бесшовный)",
+  "catalog": "GravenArc/Alphas/Bands",
+  "source": "band_scroll_tile.svg",
+  "size_mm": [
+    10.0,
+    10.0
+  ],
+  "artwork_mm": [
+    10.0,
+    5.6
+  ],
+  "px_per_mm": 40.0,
+  "depth_mm": 0.3,
+  "draft_deg": 15.0,
+  "profile": "round",
+  "tile": "x",
+  "steps": [
+    {
+      "level": 1.0,
+      "step_mm": 0.3,
+      "wall_run_mm": 0.1263
+    }
+  ],
+  "min_bridge_mm": 0.5,
+  "min_gap_mm": 0.5,
+  "fix_gaps": true,
+  "thin_bridges_mm2": 0.0,
+  "narrow_gaps_mm2": 0.0,
+  "ok_for_sand_casting": true
+}

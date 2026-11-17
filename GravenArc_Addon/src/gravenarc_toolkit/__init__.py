@@ -167,6 +167,9 @@ class GRAVENARC_OT_open_assets(Operator):
                       "откроется отдельное окно")
     bl_options = {'REGISTER'}
 
+    catalog: StringProperty(name="Каталог", default="", options={'SKIP_SAVE'},
+                            description="UUID каталога, который открыть (пусто — вся библиотека)")
+
     def execute(self, context):
         ensure_library()
         area = None
@@ -194,7 +197,45 @@ class GRAVENARC_OT_open_assets(Operator):
                         params.asset_library_reference = LIBRARY_NAME
                     except TypeError:
                         pass
+                    if self.catalog and hasattr(params, "catalog_id"):
+                        try:
+                            params.catalog_id = self.catalog
+                        except (TypeError, AttributeError):
+                            pass
         area.tag_redraw()
+        return {'FINISHED'}
+
+
+CATALOG_TEMPLATES = "72a06f5c-5671-5f2c-bcd0-a2ad68fa7eab"   # GravenArc/Templates
+CATALOG_JEWELRY = "1130a6fb-39f1-5d8c-a099-d9b63812af23"     # GravenArc/Jewelry
+
+
+class GRAVENARC_OT_brushes(Operator):
+    bl_idname = "gravenarc.brushes"
+    bl_label = "Кисти"
+    bl_description = ("Перейти в Sculpt Mode для выделенной модели и показать кисти GravenArc (GA …). "
+                      "Потом их всегда можно открыть клавишами Shift+Space")
+    bl_options = {'REGISTER'}
+
+    def execute(self, context):
+        ensure_library()
+        ob = context.active_object
+        if ob is None or ob.type != 'MESH':
+            self.report({'WARNING'}, "Сначала выделите модель (кликните по ней), потом нажмите «Кисти»")
+            return {'CANCELLED'}
+        if context.mode != 'SCULPT':
+            if context.mode != 'OBJECT':
+                bpy.ops.object.mode_set(mode='OBJECT')
+            bpy.ops.object.mode_set(mode='SCULPT')
+        area = context.area if context.area and context.area.type == 'VIEW_3D' else None
+        region = next((r for r in area.regions if r.type == 'WINDOW'), None) if area else None
+        try:
+            if region is not None:
+                with context.temp_override(area=area, region=region):
+                    bpy.ops.wm.call_asset_shelf_popover('INVOKE_DEFAULT', name="VIEW3D_AST_brush_sculpt")
+        except Exception:
+            pass   # полка кистей всё равно внизу вида и по Shift+Space
+        self.report({'INFO'}, "Кисти: слева в списке выберите GravenArc › Brushes (или Shift+Space)")
         return {'FINISHED'}
 
 
@@ -242,9 +283,20 @@ class GRAVENARC_PT_main(Panel):
             box.label(text="Библиотека не подключена", icon='ERROR')
         box.operator("gravenarc.reregister_library", icon='FILE_REFRESH')
 
+        if context.mode not in {'OBJECT', 'SCULPT'}:
+            warn = layout.box()
+            warn.alert = True
+            warn.label(text="Сейчас режим редактирования", icon='ERROR')
+            warn.label(text="Tab — вернуться в Object Mode")
+
         col = layout.column(align=True)
         col.scale_y = 1.3
-        col.operator("gravenarc.open_assets", icon='ASSET_MANAGER')
+        op = col.operator("gravenarc.open_assets", text="Шаблоны", icon='ASSET_MANAGER')
+        op.catalog = CATALOG_TEMPLATES
+        op = col.operator("gravenarc.open_assets", text="Камни и касты (ассеты)", icon='MESH_ICOSPHERE')
+        op.catalog = CATALOG_JEWELRY
+        col.operator("gravenarc.brushes", icon='BRUSH_DATA')
+        col.separator()
         col.operator("gravenarc.scene_mm", icon='DRIVER_DISTANCE')
 
         us = context.scene.unit_settings
@@ -288,6 +340,7 @@ classes = (
     GRAVENARC_OT_reregister_library,
     GRAVENARC_OT_scene_mm,
     GRAVENARC_OT_open_assets,
+    GRAVENARC_OT_brushes,
     GRAVENARC_OT_open_doc,
     GRAVENARC_PT_main,
     GRAVENARC_PT_help,

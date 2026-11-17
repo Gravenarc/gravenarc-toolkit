@@ -15,7 +15,7 @@ if [ -n "${BLENDER_EXT:-}" ]; then EXT="$BLENDER_EXT"; else EXT="${BLENDER:-blen
 cp -r "$HERE/src/gravenarc_toolkit" "$STAGE"
 mkdir -p "$STAGE/library"
 cp "$LIB/blender_assets.cats.txt" "$STAGE/library/"
-for d in brushes alphas templates tools; do cp -r "$LIB/$d" "$STAGE/library/$d"; done
+for d in brushes alphas templates tools sculpt_tools; do cp -r "$LIB/$d" "$STAGE/library/$d"; done
 # Ювелирные инструменты: код — подпакетом modules/jewelry (без своего manifest), ассеты — в library/jewelry
 mkdir -p "$STAGE/modules/jewelry" && cp "$LIB/jewelry_tools/gravenarc_jewelry/"*.py "$STAGE/modules/jewelry/"
 mkdir -p "$STAGE/library/jewelry/demo"

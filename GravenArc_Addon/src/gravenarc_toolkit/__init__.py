@@ -13,14 +13,16 @@ import importlib
 import os
 
 import bpy
-from bpy.props import BoolProperty, StringProperty
+from bpy.props import BoolProperty, PointerProperty, StringProperty
 from bpy.types import AddonPreferences, Operator, Panel
+
+from .modules.sculpt import props as sculpt_props
 
 LIBRARY_NAME = "GravenArc"
 LIBRARY_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "library")
 
 # Подпакеты, которые подключаются, только если они есть в сборке.
-_OPTIONAL_MODULES = ("jewelry",)
+_OPTIONAL_MODULES = ("sculpt", "jewelry")
 _loaded_modules = []
 
 
@@ -100,6 +102,9 @@ class GRAVENARC_AP_prefs(AddonPreferences):
         update=_update_import_method,
     )
 
+    # Настройки скульпт-инструментов (повтор мазка, кисть «как в Photoshop»)
+    sculpt: PointerProperty(type=sculpt_props.GA_SculptPrefs)
+
     def draw(self, context):
         layout = self.layout
         lib = find_library()
@@ -108,6 +113,13 @@ class GRAVENARC_AP_prefs(AddonPreferences):
                   icon='CHECKMARK' if lib else 'ERROR')
         col.label(text=LIBRARY_DIR, icon='FILE_FOLDER')
         col.prop(self, "import_method")
+        layout.separator()
+        sculpt_props.draw_prefs(self.sculpt, layout)
+        try:
+            from .modules.sculpt import keymaps as sculpt_keymaps
+            sculpt_keymaps.draw_prefs(layout)
+        except Exception as ex:   # модуль не подключился — покажем причину, а не пустоту
+            layout.label(text=f"Sculpt hotkeys unavailable: {ex}", icon='ERROR')
 
 
 # ---------------------------------------------------------------- операторы
@@ -288,6 +300,7 @@ DOCS = (  # (подпись, русская инструкция, английс
     ("Альфы", "alphas/README.md", "alphas/README_en.md", 'TEXTURE'),
     ("Шаблоны", "templates/README.md", "templates/README_en.md", 'MESH_TORUS'),
     ("Ювелирка", "jewelry/README_ru.md", "jewelry/README_en.md", 'MESH_ICOSPHERE'),
+    ("Скульпт", "sculpt_tools/README_ru.md", "sculpt_tools/README_en.md", 'SCULPTMODE_HLT'),
 )
 
 
@@ -347,6 +360,8 @@ class GRAVENARC_PT_help(Panel):
         col.label(text="    → перетащить во вьюпорт")
         col.label(text="Ювелирка: панель «Ювелирка» ниже,")
         col.label(text="    пай-меню Shift+Alt+J")
+        col.label(text="Повтор мазка, маски, кисть как в PS:")
+        col.label(text="    Sculpt Mode → панели «Sculpt: …»")
         layout.separator()
         col = layout.column(align=True)
         for label, path_ru, path_en, icon in DOCS:
@@ -394,6 +409,7 @@ def _unregister_optional_modules():
 
 
 def register():
+    bpy.utils.register_class(sculpt_props.GA_SculptPrefs)   # до настроек аддона — они на неё ссылаются
     for cls in classes:
         bpy.utils.register_class(cls)
     ensure_library()
@@ -405,3 +421,4 @@ def unregister():
     remove_library()
     for cls in reversed(classes):
         bpy.utils.unregister_class(cls)
+    bpy.utils.unregister_class(sculpt_props.GA_SculptPrefs)

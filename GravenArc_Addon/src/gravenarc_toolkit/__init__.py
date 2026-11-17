@@ -128,7 +128,7 @@ class GRAVENARC_OT_reregister_library(Operator):
 class GRAVENARC_OT_scene_mm(Operator):
     bl_idname = "gravenarc.scene_mm"
     bl_label = "Сцена в миллиметрах"
-    bl_description = ("Metric, Unit Scale 0.001, Length = Millimeters: 1 единица Blender = 1 мм "
+    bl_description = ("Metric, Unit Scale 0.001, Length = Millimeters, Mass = Grams: 1 единица Blender = 1 мм "
                       "(так сделаны все кисти и шаблоны GravenArc)")
     bl_options = {'REGISTER', 'UNDO'}
 
@@ -137,6 +137,7 @@ class GRAVENARC_OT_scene_mm(Operator):
         us.system = 'METRIC'
         us.scale_length = 0.001
         us.length_unit = 'MILLIMETERS'
+        us.mass_unit = 'GRAMS'   # ювелирный вес — в граммах
         for area in context.screen.areas if context.screen else ():
             if area.type == 'VIEW_3D':
                 for space in area.spaces:

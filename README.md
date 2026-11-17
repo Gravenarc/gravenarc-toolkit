@@ -2,7 +2,7 @@
 
 **Free jewelry toolkit for Blender 5.2 LTS: RhinoGold-style jewelry tools, ZBrush-style brushes, ornament alphas and 103 templates. Everything in millimetres, ready for resin printing and sand casting.**
 
-[**⬇ Download the latest release**](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.1.2.zip) · [Русская версия](README_ru.md) · Instagram [@gravenarc](https://instagram.com/gravenarc)
+[**⬇ Download the latest release**](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.1.3.zip) · [Русская версия](README_ru.md) · Instagram [@gravenarc](https://instagram.com/gravenarc)
 
 ![Jewelry tools demo](docs/jewelry_demo.png)
 
@@ -24,7 +24,7 @@ Hotkeys: **N › GravenArc** panel, pie menu **Shift+Alt+J** (Object Mode), **Sh
 
 ## Install
 
-1. Download [`gravenarc_toolkit-1.1.2.zip`](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.1.2.zip). Do not unzip it.
+1. Download [`gravenarc_toolkit-1.1.3.zip`](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.1.3.zip). Do not unzip it.
 2. Drag the zip into the Blender 5.2 window, or **Edit › Preferences › Get Extensions › ⌄ › Install from Disk…**
 3. Press **N** in the 3D Viewport → **GravenArc** tab → **Scene in millimetres**.
 

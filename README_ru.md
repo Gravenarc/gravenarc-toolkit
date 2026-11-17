@@ -2,7 +2,7 @@
 
 **Бесплатный ювелирный набор для Blender 5.2 LTS: инструменты в духе RhinoGold, кисти в стиле ZBrush, альфы-орнаменты и 103 шаблона. Всё в миллиметрах, готово к печати смолой и литью в песок.**
 
-[**⬇ Скачать последнюю версию**](../../releases/latest) · [English](README.md) · Instagram [@gravenarc](https://instagram.com/gravenarc)
+[**⬇ Скачать последнюю версию**](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.1.1.zip) · [English](README.md) · Instagram [@gravenarc](https://instagram.com/gravenarc)
 
 ![Демо ювелирных инструментов](docs/jewelry_demo.png)
 
@@ -24,7 +24,7 @@
 
 ## Установка
 
-1. Скачайте `gravenarc_toolkit-1.1.1.zip` в разделе [Releases](../../releases/latest). Распаковывать не нужно.
+1. Скачайте [`gravenarc_toolkit-1.1.1.zip`](https://github.com/Gravenarc/gravenarc-toolkit/raw/main/download/gravenarc_toolkit-1.1.1.zip). Распаковывать не нужно.
 2. Перетащите zip в окно Blender 5.2 или **Edit › Preferences › Get Extensions › ⌄ › Install from Disk…**
 3. В 3D-окне **N** → вкладка **GravenArc** → **Сцена в миллиметрах**.
 
